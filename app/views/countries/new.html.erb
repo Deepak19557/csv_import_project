@@ -1,0 +1,12 @@
+<%#= form_for @country, url: countries_path do |f| %>
+   <div class="form-group">
+      <%#= f.label :file, "Upload CSV File" %>
+      <%#= f.file_field :file, class: 'form-control-file', required: true %>
+   </div>
+   <%#= f.button :submit, "Upload CSV" %>
+<%# end %>
+<br><br>
+<%= form_tag countries_path, multipart: true do %>
+        <%= file_field_tag :"country[:file]" %>
+        <%= submit_tag "Import" %>
+<% end %>	

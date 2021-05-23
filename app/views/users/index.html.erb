@@ -1,0 +1,11 @@
+<br><br>
+<h4 style="text-align: center; color: red"><%= flash[:notice]%></h4>
+<br><br>
+<h4 style="text-align: center; " >
+<%= form_for @user, url: users_path do |f| %>
+    <%= f.label :file, "Upload CSV or XLS File" %><br><br>
+    <%= f.file_field :file, required: true %><br><br>
+    <h4 id="p1"><%= f.submit class: "btn btn-primary"%></h4>
+<% end %><br>
+</h4>
+<%= render 'table' %>

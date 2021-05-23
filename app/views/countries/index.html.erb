@@ -1,0 +1,25 @@
+<br><br>
+<%= form_for @country, url: countries_path do |f| %>
+    <%= f.label :file, "Upload CSV or XLS File" %><br><br>
+    <%= f.file_field :file, required: true %>
+    <%= f.submit %>
+<% end %><br>
+
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Code</th>
+			<th>TimeZone</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @countries.each do |country| %>
+			<tr>
+				<td><%= country.name %></td>
+				<td><%= country.code %></td>
+				<td><%= country.timezone %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
