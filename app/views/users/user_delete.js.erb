@@ -1,0 +1,38 @@
+// $( document ).ready(function() {
+//     $(".aaa").on("click",function() {
+//         Swal.fire({
+//                     title: 'Are you sure?',
+//                     input: 'text',
+//                     inputPlaceholder: 'ENTER DELETE',
+//                     text:  "You won't be able to revert this!",
+//                     icon:  'warning',
+//                     showCancelButton: true,
+//                     confirmButtonColor: '#3085d6',
+//                     cancelButtonColor: '#d33',
+//                     confirmButtonText: 'Yes, Delete it!'
+//                   }).then((result) => {
+//                   if (result.isConfirmed) {
+//                      Swal.fire(
+//                         'Deleted!',
+//                         'Your Record has been deleted.',
+//                         'success'
+//                         )
+//                     $.ajax({
+//                         url: "/delete_user",
+//                         type: "GET",
+//                         dataType: "script",
+//                         data: {data: $(this).attr('value')}
+//                     })
+//                 }
+//             })
+//         });
+// });
+// locarion.reload!
+
+location.reload(true);
+$.ajax({ 
+    <your deleting code>
+    success: function() {
+        window.location.reload();
+    })
+});

@@ -12,6 +12,12 @@ import Swal from 'sweetalert2/dist/sweetalert2.js'
 import 'sweetalert2/src/sweetalert2.scss'
 window.Swal = Swal;
 
+
+import Swal from 'sweetalert2'
+
+// CommonJS
+const Swal = require('sweetalert2')
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
