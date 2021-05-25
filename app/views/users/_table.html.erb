@@ -35,15 +35,14 @@
 				<td><%= user.transaction_id %></td>
 				<td><%= user.item_id %></td>
 				<td><%= user.frequency%></td>
-                <td><button type="button" value="<%= user.id%>" class = "aaa btn btn-danger">Destroy</button></td>
+                <td><button  type="button" value="<%= user.id%>" class = "aaa btn btn-danger">Destroy</button></td>
 			</tr>
         <% end%>
     </tbody>
 </table>
-
 <script type="text/javascript">
     $( document ).ready(function() {
-        $(".aaa").on("click",function() {
+        $(".aaa").on("click",function(){
             Swal.fire({
                 title: 'Are you sure?',
                 input: 'text',
@@ -65,18 +64,17 @@
                         url: "/user_delete",
                         type: "GET",
                         dataType: "script",
-                        data: {data: $(this).attr('value')}
-                        //success:(data) ->
-                        //alert data.id
-                        //return false
-                        //error:(data) ->
-                        //return false
+                        data: {data: $(this).attr('value')},
+                        success: function(data){
+                            //debugger
+                            location.reload();
+                        }
+                        
                     })
                 }
             })
         });
+
 });
 </script>
- 
-
 
