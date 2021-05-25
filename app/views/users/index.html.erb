@@ -5,6 +5,11 @@
 <%= form_for @user, url: users_path do |f| %>
     <%= f.label :file, "Upload CSV or XLS File" %><br><br>
     <%= f.file_field :file, required: true %><br><br>
+	<div class="field">
+    	<%= f.label :clip %>
+    	<%= f.file_field :clip %>
+  	</div>
+    
     <h4 id="p1"><%= f.submit class: "btn btn-primary"%></h4>
 <% end %><br>
 </h4>

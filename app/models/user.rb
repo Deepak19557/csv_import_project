@@ -1,4 +1,6 @@
 class User < ApplicationRecord 
+	has_one_attached :clip
+
 	def self.import(file)
 		if file.content_type.in?(%w(application/vnd.ms-excel text/csv application/vnd.openxmlformats-officedocument.spreadsheetml.sheet))
 			CSV.foreach(file.path, headers: true) do |row|

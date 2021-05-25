@@ -15,6 +15,7 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :transaction_id
       t.string :item_id 
       t.string :frequency  
+      t.string :clip
 
       t.timestamps
     end

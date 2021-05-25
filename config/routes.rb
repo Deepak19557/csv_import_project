@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :videos
+  #root "videos#index"
   # root "countries#index"
   # resources :countries
   root "users#index"
