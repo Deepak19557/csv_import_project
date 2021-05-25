@@ -22,3 +22,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+With the help of this project you can easily import csv file or excel file rescord and store in your database.
+
