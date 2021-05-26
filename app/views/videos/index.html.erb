@@ -16,7 +16,8 @@
       <tr>
         <td><%= video.title %></td>
         <td><%= video.description %></td>
-        <td><%= video_tag(url_for(video.clip),controls:'', style: 'width:20%; height:auto')%> </td>
+        <td><%= video_tag(url_for(video.clip),controls:'', style: 'width:35%; height:auto')%> </td>
+        <td><%#= image_tag((video.thumbnail),controls:'', style: 'width:35%; height:auto')%> </td>
         <td><%#= image_tag((image.clip),controls:'', style: 'width:40%; height:auto')%> </td>
         <td><%= link_to 'Show', video %></td>
         <td><%= link_to 'Edit', edit_video_path(video) %></td>

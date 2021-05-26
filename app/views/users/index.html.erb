@@ -1,16 +1,40 @@
-<br><br>
-<h4 style="text-align: center; color: red"><%= flash[:notice]%></h4>
-<br><br>
-<h4 style="text-align: center; " >
-<%= form_for @user, url: users_path do |f| %>
-    <%= f.label :file, "Upload CSV or XLS File" %><br><br>
-    <%= f.file_field :file, required: true %><br><br>
-	<div class="field">
+<!-- <div 
+class="container"
+style="margin:-100px 100px 0 0;">
+ -->
+<h4 
+style="text-align: center; color: red"><%= flash[:notice]%>	
+</h4>
+<!-- 
+<div 
+style="margin-top:100px;width:130%;background:#444;padding:30px;border-radius:20px;"
+> -->
+<%#= form_for @user, url: users_path do |f| %>
+<%= form_for User.new, :as => :user, :html => {:multipart => true} do |f| %>
+<!-- 
+<div 
+	style="background:#fff;color:#000;width:100%;margin-top:20px;border-radius:0 10px 20px 10px;padding:7px;" >
+	
+</div> -->
+	<%= f.label :file, "Upload CSV or XLS File" %>
+    <%= f.file_field :file, required: true %>	<br>
+
+<!-- 
+<div 
+	style="background:#fff;color:#000;width:100%;margin-top:20px;border-radius:0 10px 20px 10px;padding:7px;
+	" class="field">
+</div> -->
     	<%= f.label :clip %>
     	<%= f.file_field :clip %>
-  	</div>
     
-    <h4 id="p1"><%= f.submit class: "btn btn-primary"%></h4>
-<% end %><br>
+
+<h4 
+    style="margin-top:20px;"
+    id="p1"><%= f.submit class: "btn btn-primary btn-lg"%>		
 </h4>
-<%= render 'table' %>
+
+<% end %>
+
+</div>
+</div>
+<%= render 'table' %>	

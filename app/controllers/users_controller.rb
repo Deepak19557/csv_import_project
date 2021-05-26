@@ -9,10 +9,10 @@ class UsersController < ApplicationController
   end
 
   def create
-    debugger
-    #@user = User.new(video_params)
+    #debugger
+    @user = User.new(clip:params[:user][:clip])
 
-    @user = User.new ( video_params )
+    #@user = User.new (video_params)
     @user.save
 	  if User.import(params[:user][:file])
       redirect_to users_path,  notice:  "Imported users successfully."
@@ -43,8 +43,8 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
 
-  private
-  def video_params
-      params.require(:user).permit(:clip)
-  end
+  # private
+  # def video_params
+  #     params.require(:user).permit(:clip)
+  # end
 end
